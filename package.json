@@ -1,0 +1,26 @@
+{
+  "name": "react-project",
+  "version": "1.0.0",
+  "description": "React app by Rudransh Bhardwaj",
+  "main": "App.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rudranshBhardwaj24/React.git"
+  },
+  "keywords": [
+    "reach",
+    "app"
+  ],
+  "author": "Rudransh Bhardwaj",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rudranshBhardwaj24/React/issues"
+  },
+  "homepage": "https://github.com/rudranshBhardwaj24/React#readme",
+  "devDependencies": {
+    "parcel": "^2.8.3"
+  }
+}
