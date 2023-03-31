@@ -1,20 +1,9 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import ReactDOM from "react-dom/client";
+import Header from "./components/Header";
+import Body from "./components/Body";
 
 
-const RestaurantCard = (props) => {
-  const {restData} = props;
-  const {cloudinaryImageId, name, avgRating, cuisines, deliveryTime} = restData?.data;
-  return(
-    <div className="res-card">
-      <img className = "res-logo"alt="res-logo" src={("https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/"+restData.data.cloudinaryImageId)}></img>
-      <h3> {name} </h3>
-      <h3> {avgRating} </h3>
-      <h3> {cuisines.join(", ")}</h3>
-      <h3> {deliveryTime} Minutes</h3>
-    </div>
-  )
-}
 
 
 const restList = [
@@ -2133,36 +2122,7 @@ const restList = [
   }]
 
 
-const Body = () => {
-  return(
-    <div className="body">
-      <div className="search">Search</div>
-      <div className="res-container">
-        {
-          restList.map(restaurant => <RestaurantCard key = {restaurant.data.id}restData = {restaurant}/>)
-        }
-         </div>
-    </div>
-  )
-}
 
-const Header = () => {
-  return(
-    <div className="header">
-      <div className="logo-container">
-        <img className="logo" src="https://www.logodesign.net/logo/smoking-burger-with-lettuce-3624ld.png"/>
-      </div>
-      <div className="nav-items">
-        <ul>
-          <li>Home</li>
-          <li>About Us</li>
-          <li>Contact Us</li>
-          <li>Card</li>
-        </ul>
-      </div>
-    </div>
-  )
-}
 
 const AppLayout = () => {
   return(
