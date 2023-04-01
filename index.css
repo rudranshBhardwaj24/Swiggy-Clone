@@ -60,3 +60,9 @@
 {
     font-family: sans-serif;
 }
+
+.filter-btn{
+    cursor: pointer;
+    padding: 10px;
+    margin: 10px;
+}
