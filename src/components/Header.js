@@ -4,7 +4,9 @@ const Header = () => {
   return (
     <div className="header">
       <div className="logo-container">
-        <img className="logo" src={LOGO_URL} />
+        <a href="index.html" onClick={() => {}}>
+          <img className="logo" src={LOGO_URL} />
+        </a>
       </div>
       <div className="nav-items">
         <ul>
