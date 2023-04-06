@@ -1,11 +1,22 @@
 import RestaurantCard from "./RestaurantCard";
 import restList from "../utils/mockData";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Body = () => {
   const [resList, setResList] = useState(restList);
   const [searchText, setSearchText] = useState("");
+  useEffect(() => {
+    getRestaurant();
+  }, []);
   console.log(resList);
+
+  async function getRestaurant() {
+    const data = await fetch(
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.7040592&lng=77.10249019999999&page_type=DESKTOP_WEB_LISTING"
+    );
+    const json = await data.json();
+    setResList(json.data.cards[2].data.data.cards);
+  }
   //console.log(setResList);
   return (
     <>

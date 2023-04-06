@@ -64,3 +64,11 @@
 .search-container {
   margin: 10px;
 }
+
+.home:hover,
+.about:hover,
+.contact:hover,
+.cart:hover {
+  color: blue;
+  cursor: pointer;
+}
