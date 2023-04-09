@@ -86,3 +86,27 @@
   background-position: center;
   border: none;
 } */
+
+.shimmer-card {
+  margin: 20px;
+  width: 290px;
+  height: 290px;
+  background-color: gray;
+  animation-name: example;
+  animation-duration: 2s;
+  border-radius: 20px;
+}
+
+.restaurant-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@keyframes example {
+  from {
+    background-color: lightgrey;
+  }
+  to {
+    background-color: darkgrey;
+  }
+}
