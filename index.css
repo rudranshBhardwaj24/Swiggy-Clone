@@ -62,6 +62,8 @@
   margin: 10px;
 }
 .search-container {
+  display: flex;
+  justify-content: center;
   margin: 10px;
 }
 
@@ -72,3 +74,15 @@
   color: blue;
   cursor: pointer;
 }
+
+.search-input {
+  width: 400px;
+  height: 50px;
+}
+
+/* .search-btn {
+  background-image: url("https://www.citypng.com/public/uploads/preview/download-blue-search-icon-button-png-11640084027s0fkuhz2lb.png");
+  background-size: cover;
+  background-position: center;
+  border: none;
+} */
