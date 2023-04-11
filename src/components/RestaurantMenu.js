@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { CDN_LINK } from "../utils/constants";
+
 const RestaurantMenu = () => {
   const params = useParams();
   useEffect(() => {

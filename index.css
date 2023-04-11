@@ -21,6 +21,7 @@
 
 .res-card:hover {
   border: 1px solid black;
+  border-radius: 20px;
   cursor: pointer;
 }
 
@@ -85,6 +86,7 @@
 
 .restaurant-list {
   display: flex;
+  justify-content: space-between;
   flex-wrap: wrap;
 }
 
@@ -109,17 +111,24 @@
 .error-image {
   width: 100px;
 }
+
 .restaurant-card {
   --elevation: 10px;
   padding: 10px;
   width: 20%;
   text-decoration: none;
-  margin: 10px;
+  margin: 5px;
+  /* margin: 20px;
+  width: 290px;
+  height: 290px;
+  border-radius: 20px; */
 }
 
 .res-container {
+  padding: 10px;
   text-decoration: none;
   display: flex;
+  justify-content: space-between;
   flex-wrap: wrap;
   width: 100%;
 }
