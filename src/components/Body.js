@@ -42,7 +42,7 @@ const Body = () => {
           className="search-btn"
           onClick={() => {
             const resList3 = resList.filter(
-              (res) => res.data.name === searchText
+              (res) => res.data.name.toLowerCase() === searchText.toLowerCase()
             );
             setResList(resList3);
           }}
