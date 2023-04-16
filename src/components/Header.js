@@ -24,6 +24,12 @@ const Header = () => {
 
           <li className="contact">Contact Us</li>
           <li className="cart">Cart</li>
+          <li className="Profile">
+            <Link to="/about/profile">Profile</Link>
+          </li>
+          <li>
+            <Link to="/instamart">Instamart</Link>
+          </li>
         </ul>
       </div>
       {logStatus ? (

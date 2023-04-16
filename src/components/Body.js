@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { SEARCH_LOGO_URL } from "../utils/constants";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
+import useOnline from "../utils/useOnline";
 const Body = () => {
   const [allRestaurants, setAllRestaurants] = useState([]);
   const [resList, setResList] = useState([]);
@@ -23,6 +24,11 @@ const Body = () => {
     setAllRestaurants(json?.data?.cards[2]?.data?.data?.cards);
   }
   //console.log(setResList);
+  const isOnline = useOnline();
+
+  if (!isOnline) {
+    return <h1> You're offline :( </h1>;
+  }
   return allRestaurants.length < 1 ? (
     <Shimmer />
   ) : (

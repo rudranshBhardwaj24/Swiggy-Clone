@@ -61,21 +61,18 @@
   height: 50px;
 }
 
-/* .search-btn {
-  background-image: url("https://www.citypng.com/public/uploads/preview/download-blue-search-icon-button-png-11640084027s0fkuhz2lb.png");
-  background-size: cover;
-  background-position: center;
-  border: none;
-} */
-
 .shimmer-card {
+  border-radius: 20px;
   margin: 20px;
   width: 290px;
   height: 290px;
-  background-color: gray;
-  animation-name: example;
-  animation-duration: 1.5s;
-  border-radius: 20px;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 20%,
+    rgba(255, 255, 255, 1.5) 50%,
+    rgba(255, 255, 255, 0) 80%
+  );
+  animation: example 1s;
 }
 
 .restaurant-list {
@@ -85,10 +82,10 @@
 }
 
 @keyframes example {
-  from {
+  0% {
     background-color: lightgrey;
   }
-  to {
+  100% {
     background-color: darkgrey;
   }
 }
@@ -116,10 +113,6 @@
   width: 20%;
   text-decoration: none;
   margin: 10px;
-  /* margin: 20px;
-  width: 290px;
-  height: 290px;
-  border-radius: 20px; */
 }
 
 .restaurant-card:hover {
