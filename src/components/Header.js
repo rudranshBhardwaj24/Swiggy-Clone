@@ -4,27 +4,27 @@ import { Link } from "react-router-dom";
 const Header = () => {
   const [logStatus, setLogStatus] = useState(false);
   return (
-    <div className="header">
-      <div className="logo-container">
+    <div className="flex justify-between bg-pink-50 shadow-lg">
+      <div className="h-1">
         <a href="index.html" onClick={() => {}}>
-          <img className="logo" src={LOGO_URL} />
+          <img className="h-24 p-1" src={LOGO_URL} />
         </a>
       </div>
       <div className="nav-items">
-        <ul>
-          <li className="home">
+        <ul className="flex py-10">
+          <li className="px-2">
             <Link to="/">Home</Link>
           </li>
 
-          <li className="about">
+          <li className="px-2">
             <Link to="/about" className="about">
               About
             </Link>
           </li>
 
-          <li className="contact">Contact Us</li>
-          <li className="cart">Cart</li>
-          <li className="Profile">
+          <li className="px-2">Contact Us</li>
+          <li className="px-2">Cart</li>
+          <li className="px-2">
             <Link to="/about/profile">Profile</Link>
           </li>
           <li>

@@ -30,14 +30,19 @@ const RestaurantMenu = () => {
     <Shimmer />
   ) : (
     <div>
-      <div>
-        <h1>Restaurant Id: {id}</h1>
-        <h1>{Restaurant.name}</h1>
-        <img src={CDN_LINK + Restaurant.cloudinaryImageId}></img>
-        <h3>{Restaurant.area}</h3>
-        <h3>{Restaurant.city}</h3>
-        <h3>{Restaurant.avgRatin}</h3>
-        <h3>{Restaurant.costForTwo}</h3>
+      <div className="flex flex-wrap justify-self-center shadow-lg">
+        <img
+          className="p-5"
+          src={CDN_LINK + Restaurant.cloudinaryImageId}
+        ></img>
+        <div className="flex flex-col justify-center">
+          <h1 className="py-2 font-bold">Restaurant Id: {id}</h1>
+          <h1 className="py-2 font-bold">{Restaurant.name}</h1>
+          <h3 className="py-2 font-bold">{Restaurant.area}</h3>
+          <h3 className="py-2 font-bold">{Restaurant.city}</h3>
+          <h3 className="py-2 font-bold">{Restaurant.avgRatin}</h3>
+          <h3 className="py-2 font-bold">{Restaurant.costForTwo}</h3>
+        </div>
       </div>
       {/* {Object.values(
         Restaurant?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards
