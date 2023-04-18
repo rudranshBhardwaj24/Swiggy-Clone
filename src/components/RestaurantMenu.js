@@ -3,28 +3,28 @@ import { useEffect, useState } from "react";
 import useRestaurant from "../utils/useRestaurant";
 import Shimmer from "./Shimmer";
 import { CDN_LINK } from "../utils/constants";
+import { useDispatch } from "react-redux";
+import { addItem, removeItem, clearCart } from "../utils/cartSlice";
 
 const RestaurantMenu = () => {
   const params = useParams();
   const { id } = params;
 
   const Restaurant = useRestaurant(id);
-  // useEffect(() => {
-  //   getRestaurantInfo();
-  // }, []);
 
-  // const [Restaurant, setRestaurant] = useState(null);
+  const dispatch = useDispatch();
 
-  // async function getRestaurantInfo() {
-  //   const data = await fetch(
-  //     "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=28.7040592&lng=77.10249019999999&restaurantId=" +
-  //       id
-  //   );
-  //   const json = await data.json();
-  //   console.log(json.data);
-  //   setRestaurant(json?.data?.cards[0]?.card?.card?.info);
-  // }
-  //   console.log(params);
+  const handleAddItems = () => {
+    dispatch(addItem("Grapes"));
+  };
+
+  const handleRemoveItems = () => {
+    dispatch(removeItem());
+  };
+
+  const handleClearCart = () => {
+    dispatch(clearCart());
+  };
 
   return !Restaurant ? (
     <Shimmer />
@@ -44,11 +44,24 @@ const RestaurantMenu = () => {
           <h3 className="py-2 font-bold">{Restaurant.costForTwo}</h3>
         </div>
       </div>
-      {/* {Object.values(
-        Restaurant?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards
-      ).map((item) => (
-        <div> </div>
-      ))} */}
+      <div className="flex flex-col justify-center">
+        <span className="p-2 font-bold">Menu</span>
+        <span className="p-2">Dal Makhni</span>
+        <div>
+          <button className="p-5 m-5" onClick={() => handleAddItems()}>
+            Add Item
+          </button>
+
+          <button className="p-5 m-5" onClick={() => handleRemoveItems()}>
+            Remove Item
+          </button>
+
+          <button className="p-5 m-5" onClick={() => handleClearCart()}>
+            Clear Cart
+          </button>
+        </div>
+        <span className="p-2">Shahee Paneer</span>
+      </div>
     </div>
   );
 };

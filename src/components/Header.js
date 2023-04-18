@@ -1,7 +1,9 @@
 import { LOGO_URL } from "../utils/constants";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 const Header = () => {
+  const cartItems = useSelector((store) => store.cart.items);
   const [logStatus, setLogStatus] = useState(false);
   return (
     <div className="flex justify-between bg-pink-50 shadow-lg">
@@ -23,7 +25,7 @@ const Header = () => {
           </li>
 
           <li className="px-2">Contact Us</li>
-          <li className="px-2">Cart</li>
+          <li className="px-2">Cart - {cartItems.length}</li>
           <li className="px-2">
             <Link to="/about/profile">Profile</Link>
           </li>

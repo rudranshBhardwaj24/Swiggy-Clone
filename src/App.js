@@ -8,14 +8,18 @@ import Profile from "./components/Profile";
 import RestaurantCard from "./components/RestaurantCard";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import RestaurantMenu from "./components/RestaurantMenu";
+import { Provider } from "react-redux";
+import store from "./utils/store";
 
 const Instamart = lazy(() => import("./components/Instamart"));
 
 const AppLayout = () => {
   return (
     <div>
-      <Header />
-      <Outlet className="outlet" />
+      <Provider store={store}>
+        <Header />
+        <Outlet className="outlet" />
+      </Provider>
     </div>
   );
 };
