@@ -5,6 +5,7 @@ import { SEARCH_LOGO_URL } from "../utils/constants";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnline from "../utils/useOnline";
+
 const Body = () => {
   const [allRestaurants, setAllRestaurants] = useState([]);
   const [resList, setResList] = useState([]);
@@ -14,14 +15,16 @@ const Body = () => {
   }, []);
   console.log(resList);
 
-  async function getRestaurant() {
-    const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.7040592&lng=77.10249019999999&page_type=DESKTOP_WEB_LISTING"
-    );
-    const json = await data.json();
+  function getRestaurant() {
+    // const data = await fetch(
+    //   "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.7040592&lng=77.10249019999999&page_type=DESKTOP_WEB_LISTING"
+    // );
+    // const json = await data.json();
 
-    setResList(json?.data?.cards[2]?.data?.data?.cards);
-    setAllRestaurants(json?.data?.cards[2]?.data?.data?.cards);
+    console.log(restList);
+    // console.log(json.data.cards[2].data.data.cards);
+    setResList(restList);
+    setAllRestaurants(restList);
   }
   //console.log(setResList);
   const isOnline = useOnline();
@@ -33,11 +36,11 @@ const Body = () => {
     <Shimmer />
   ) : (
     <>
-      <div className="search-container p-5 bg-pink-50 my-5 flex justify-center">
+      <div className="search-container p-5 bg-orange-400 flex justify-center">
         <input
           type="text"
           placeholder="Search"
-          className="search-input px-4"
+          className="search-input px-4 w-1/2 rounded-lg"
           value={searchText}
           onChange={(e) => {
             setSearchText(e.target.value);
@@ -45,7 +48,7 @@ const Body = () => {
         ></input>
 
         <button
-          className="p-2 mx-5 bg-green-400 text-green-50 hover:bg-green-600 rounded-lg"
+          className="p-2 mx-5 text-black font-bold bg-gray-100 rounded-lg border border-black"
           onClick={() => {
             const resList3 = resList.filter(
               (res) => res.data.name.toLowerCase() === searchText.toLowerCase()
@@ -59,7 +62,7 @@ const Body = () => {
       <div className="body">
         <div className="filter">
           <button
-            className="filter-btn"
+            className="filter-btn border border-black p-2 m-2 text-xl font-bold rounded-lg  bg-orange-400 text-gray-100"
             onClick={() => {
               const resList2 = resList.filter((res) => res.data.avgRating > 4);
               setResList(resList2);
@@ -68,7 +71,7 @@ const Body = () => {
             Top rated restaurant
           </button>
         </div>
-        <div className="flex flex-wrap justify-center">
+        <div className="flex flex-wrap justify-center gap-4">
           {resList.map((restaurant) => (
             <Link
               to={"/restaurant/" + restaurant.data.id}

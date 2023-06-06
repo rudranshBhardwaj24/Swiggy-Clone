@@ -6,11 +6,11 @@ const Header = () => {
   const cartItems = useSelector((store) => store.cart.items);
   const [logStatus, setLogStatus] = useState(false);
   return (
-    <div className="flex justify-between bg-pink-50 shadow-lg">
+    <div className="flex justify-between shadow-lg font-bold text-2xl text-gray-100 bg-orange-400 gap-10">
       <div className="h-1">
-        <a href="index.html" onClick={() => {}}>
+        <Link to="/">
           <img className="h-24 p-1" src={LOGO_URL} />
-        </a>
+        </Link>
       </div>
       <div className="nav-items">
         <ul className="flex py-10">
